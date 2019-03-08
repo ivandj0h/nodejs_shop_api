@@ -5,7 +5,7 @@ const router = express.Router();
 // This Route is use to GET all data
 router.get('/', (req, res, next) => {
     res.status(200).json({
-        message: 'It Works! SomeOne access to /products using GET Request'
+        message: 'It Works! Your Products were Fetched!'
     });
 });
 
@@ -14,7 +14,7 @@ router.get('/:productId', (req, res, next) => {
     const id = req.params.productId;
     if(id === '1'){
         res.status(200).json({
-            message: 'You Discovered the Special ID',
+            message: 'Congradulation!, we Discovered the Special ID',
             id: id
         });
     }else{
