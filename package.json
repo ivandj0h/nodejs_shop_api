@@ -1,0 +1,19 @@
+{
+  "name": "node_rest_api",
+  "version": "1.0.0",
+  "description": "NodeJS RESTfull API (build a shop api)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "restfull",
+    "api"
+  ],
+  "author": "Ivandi Djoh Gah",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
