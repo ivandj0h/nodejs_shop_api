@@ -2,9 +2,15 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const producRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
+
+// Use Mongoose to Connect to the DB
+mongoose.connect('mongodb+srv://administrator:' + process.env.MONGO_ATLAS_PWD + '@node-rest-shop-qnoti.mongodb.net/test?retryWrites=true', {
+    useMongoClient: true
+});
 
 // Use Morgan as Midleware
 app.use(morgan('dev'));
