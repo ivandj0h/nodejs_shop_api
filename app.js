@@ -1,12 +1,17 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
+const bodyParser = require('body-parser');
 
 const producRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
 
 // Use Morgan as Midleware
 app.use(morgan('dev'));
+
+// Use Body-Parser
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 // this code is use to execute /products
 app.use('/products', producRoutes);
