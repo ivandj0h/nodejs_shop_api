@@ -13,6 +13,17 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+// Adding Response Header to Avoid/Preventing CORS Issued
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+        if(req.method === 'OPTIONS')
+        {
+            res.header('Access-Control-Allow-Method', 'GET, POST, PUT, PATCH, DELETE');
+            return res.status(200).json({});
+        }
+});
+
 // this code is use to execute /products
 app.use('/products', producRoutes);
 
@@ -22,7 +33,6 @@ app.use('/orders', orderRoutes);
 // Handle Error for Not Found (404) Request
 app.use((req, res, next) => {
     const error = new Error('Sorry!, Not Found!');
-
     error.status = 404;
     next(error);
 });
