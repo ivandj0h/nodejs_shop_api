@@ -34,12 +34,10 @@ router.post('/', (req, res, next) => {
         name: req.body.name,
         price: req.body.price        
     });
-    product.save()
-           .then(result => {
+    product.save().then(result => {
                 console.log(result);
-           })
-           .catch(err => 
-                console.log(err));
+           });
+           //.catch(err => console.log(err));
     res.status(201).json({
         status: '201',
         message: 'It Works! Product was Added Successfully!',
