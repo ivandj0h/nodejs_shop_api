@@ -14,7 +14,7 @@ app.use('/products', producRoutes);
 // this code is use to execute /orders
 app.use('/orders', orderRoutes);
 
-// Handle Error for All Request
+// Handle Error for Not Found (404) Request
 app.use((req, res, next) => {
     const error = new Error('Sorry!, Not Found!');
 
