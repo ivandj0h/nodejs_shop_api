@@ -1,6 +1,9 @@
 const express = require('express');
-
 const router = express.Router();
+const mongoose = require('mongoose');
+
+// Import the Product Model
+const Product = require('../models/product');
 
 // This Route is use to GET all data
 router.get('/', (req, res, next) => {
@@ -26,10 +29,17 @@ router.get('/:productId', (req, res, next) => {
 
 // This Route is use to POST data to server
 router.post('/', (req, res, next) => {
-    const product = {
+    const product = new Product({
+        _id: new mongoose.Types.ObjectId(),
         name: req.body.name,
-        price: req.body.price
-    };
+        price: req.body.price        
+    });
+    product.save()
+           .then(result => {
+                console.log(result);
+           })
+           .catch(err => 
+                console.log(err));
     res.status(201).json({
         status: '201',
         message: 'It Works! Product was Added Successfully!',
