@@ -18,7 +18,7 @@ app.use('/orders', orderRoutes);
 app.use((req, res, next) => {
     const error = new Error('Sorry!, Not Found!');
 
-    error.status(404);
+    error.status = 404;
     next(error);
 });
 
