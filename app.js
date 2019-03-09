@@ -8,10 +8,10 @@ const producRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
 
 // Use Mongoose to Connect to the DB
-mongoose.connect('mongodb+srv://administrator:' + process.env.MONGO_ATLAS_PWD + '@node-rest-shop-qnoti.mongodb.net/test?retryWrites=true', {
+//mongoose.connect('mongodb+srv://administrator:' + process.env.MONGO_ATLAS_PWD + '@node-rest-shop-qnoti.mongodb.net/test?retryWrites=true', {
     //useMongoClient: true
-    useNewUrlParser: true
-});
+    //useNewUrlParser: true
+//});
 
 // Use Morgan as Midleware
 app.use(morgan('dev'));
