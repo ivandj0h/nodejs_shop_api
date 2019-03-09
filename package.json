@@ -12,7 +12,7 @@
     "restful",
     "api"
   ],
-  "author": "Maximilian Schwarzmüller",
+  "author": "Ivandjoh",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^1.0.3",
