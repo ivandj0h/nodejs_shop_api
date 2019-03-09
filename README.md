@@ -3,13 +3,15 @@
 
 ## installation
 
-        > git clone https://github.com/ivandi1980/nodejs_shop_api.git
-        > npm install
+> git clone https://github.com/ivandi1980/nodejs_shop_api.git
+> npm install
         
 ## run
 
-        npm start
+    npm start
 
 ## error
 
-        if you meet error when you run this, please let me know...
+    if you meet error when you run this, please let me know...
+    or
+    please collaborate to fix it together by edit this code and push it back
